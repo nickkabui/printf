@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	va_start(list, format)
+	va_start(list, format);
+
 		for (i = 0; format && format[i] != '\0'; i++)
 		{
 			if (format[i] != '%')
@@ -34,7 +35,7 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			++i;
-			printed = handle_print(format, &i, list, buffer
+			printed = handle_print(format, &i, list, buffer,
 					flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
